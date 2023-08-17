@@ -287,20 +287,20 @@ static const struct dmi_system_id tuxedo_dmi_string_match[] __initconst = {
 
 static int __init tuxedo_keyboard_init(void)
 {
-	TUXEDO_INFO("module init\n");
-
+	TUXEDO_INFO("module init Linux KB\n");
+/*
 	if (!(dmi_check_system(tuxedo_dmi_string_match)
 	    || (x86_match_cpu(skip_tuxedo_dmi_string_check_match)
 	    && !x86_match_cpu(force_tuxedo_dmi_string_check_match)))) {
 		return -ENODEV;
 	}
-
+*/
 	return 0;
 }
 
 static void __exit tuxedo_keyboard_exit(void)
 {
-	TUXEDO_INFO("module exit\n");
+	TUXEDO_INFO("module exit linux KB\n");
 
 	if (tuxedo_platform_device != NULL)
 		tuxedo_keyboard_remove_driver(NULL);
